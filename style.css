@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+img,
+picture,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+span {
+  display: inline-block;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 3px;
+  border: 0;
+  text-transform: capitalize;
+  cursor: pointer;
+  width: max-content;
+  background-color: transparent;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 0;
+}
+.section {
+  height: 100vh;
+  padding: 1rem;
+}
+.card {
+  width: min(80vw, 400px);
+  box-shadow: 0 0 20px rgba(21, 58, 94, 0.15);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.5s;
+}
+.card__image {
+  flex: 1;
+  max-height: 235px;
+  object-fit: cover;
+}
+.card__body {
+  padding: 1rem;
+  flex: 2;
+}
+.card h2 {
+  text-transform: uppercase;
+  color: rgb(40, 42, 46);
+  margin-bottom: 0.3rem;
+}
+.card p {
+  color: rgb(87, 121, 144);
+  margin-bottom: 0.5rem;
+}
+/* intersection observer */
+
+.card {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(25%);
+}
+.card.active {
+  opacity: 1;
+  pointer-events: visible;
+  transform: translateX(0);
+}
